@@ -1,0 +1,19 @@
+
+
+
+
+.carousel-slide{
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+}
+/*
+.carousel-item{
+  height: 200px;
+}*/
+
+.carousel-inner{
+  height: 200px;
+} 
+
+

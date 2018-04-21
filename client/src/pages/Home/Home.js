@@ -1,53 +1,86 @@
-import React, {Component} from "react"
-import {Navbar} from "../../components/Navbar"
+import React, {Component} from "react";
+import { Link } from 'react-router-dom';
+import { Carousel, Image, Grid, Row } from 'react-bootstrap';
+import './Home.css';
 
-class Home extends Component{
 
-  render(){
-    return (
-      
-      <div> 
-        <div className="jumbotron">
-          <h1>Hello, world!</h1>
-          <p>...</p>
-          <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+class Home extends Component {
+  render () {
+    return(
+      <div className="container">
+        
+
+        <div className="row">
+          <div className="col-md-12">
+            <div className="jumbotron">
+            <div className='row'>
+          
+          <div className='col-md-12'>
+            <div className="carousel slide">
+              <Carousel>
+                <Carousel.Item className="carousel-item">
+                  <div className="view"></div>
+                  {/* Logo Slide */}
+                  <Carousel.Item>
+                    <Image className="carousel-item" src="assets/Lendit_logo.png" alt="Logo slide" />
+                  </Carousel.Item>
+                  {/* First Slide */}
+                  <Image className="carousel-item" src="assets/bike.jpg" alt="First slide" />
+                </Carousel.Item>
+                {/* Second Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/chainsaw.jpg" alt="Second slide" />
+                </Carousel.Item>
+                {/* Third Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/chairs.jpg" alt="Third slide" />
+                </Carousel.Item>
+                {/* Fourth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/kayak.jpg" alt="Forth slide" />
+                </Carousel.Item> 
+                {/* Fifth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/keg.jpg" alt="Fifth slide" />
+                </Carousel.Item> 
+                {/* Sixth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/ladder.jpg" alt="Sixth slide" />
+                </Carousel.Item>
+                {/* Seventh Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/mower.jpg" alt="Seventh slide" />
+                </Carousel.Item>
+                {/* Eighth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/sewing.jpg" alt="Eighth slide" />
+                </Carousel.Item>
+                {/* Nineth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/trailer.jpg" alt="Nineth slide" />
+                </Carousel.Item>
+                {/* Tenth Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/wheelbarrow.jpg" alt="Tenth slide" />
+                </Carousel.Item>
+              </Carousel>
+            </div>
+
+          </div>
+          
         </div>
-        <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
-  <ol className="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-
-  <div className="carousel-inner" role="listbox">
-    <div className="item active">
-      <img src="..." alt="..." />
-      <div className="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div className="item">
-      <img src="..." alt="..." />
-      <div className="carousel-caption">
-        ...
-      </div>
-    </div>
-    ...
-  </div>
-
-  <a className="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span className="sr-only">Previous</span>
-  </a>
-  <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span className="sr-only">Next</span>
-  </a>
-</div>
+              <h1 className="display-4">Welcome to LendiT</h1>
+              <p className="lead">LendiT is a great website for those who are looking for the right piece of equipment.</p>
+              <hr className="my-4" />
+              <p>Whether you’re a Do it yourselfer or a Weekend warrior find what your looking for on Lendit.</p>
+              <p className="lead">
+                <a className="btn btn-primary btn-lg" href="/about" role="button">Learn more</a>
+              </p>
+            </div>
+          </div>  
+        </div>
       </div>
     )
   }
 }
-
-export default Home
+export default Home;
