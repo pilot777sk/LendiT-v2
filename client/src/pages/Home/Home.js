@@ -20,11 +20,8 @@ class Home extends Component {
               <Carousel>
                 <Carousel.Item className="carousel-item">
                   <div className="view"></div>
-                  {/* Logo Slide */}
-                  <Carousel.Item>
-                    <Image className="carousel-item" src="assets/Lendit_logo.png" alt="Logo slide" />
-                  </Carousel.Item>
-                  {/* First Slide */}
+                
+                {/* First Slide */}
                   <Image className="carousel-item" src="assets/bike.jpg" alt="First slide" />
                 </Carousel.Item>
                 {/* Second Slide */}
@@ -63,6 +60,10 @@ class Home extends Component {
                 <Carousel.Item>
                   <Image className="carousel-item" src="assets/wheelbarrow.jpg" alt="Tenth slide" />
                 </Carousel.Item>
+                {/* Logo Slide */}
+                <Carousel.Item>
+                  <Image className="carousel-item" src="assets/Lendit_logo.png" alt="Logo slide" />
+                  </Carousel.Item>
               </Carousel>
             </div>
 

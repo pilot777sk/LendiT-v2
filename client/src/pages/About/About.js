@@ -5,7 +5,7 @@ class About extends Component{
 
   render(){
     return (
-      <div>
+      <div className='container'>
       <h1>  About LendiT </h1>
         <div>
           <p>LendiT is a great website for those who are looking for the right piece of equipment..
@@ -34,7 +34,7 @@ class About extends Component{
           </p>
           <h2> Make money by lending </h2>
  
-          <p>Let say you have 12 foot step ladder in your garage that has not been used for 5 years but you want to hang on to it. By posting it on LendiT another member need one for the weekend you may make $20 and save the member $300 and space in his garage.
+          <p>Let say you have 12 foot step ladder in your garage that has not been used for 5 years but you want to hang on to it. By posting it on LendiT another member who needs one for the weekend you may make $20 and save the member $300 and space in his garage.
           </p>
         </div>  
       </div>
