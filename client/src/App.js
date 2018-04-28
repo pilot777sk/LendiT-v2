@@ -12,6 +12,7 @@ import Dash from './pages/Dash'
 
 
 import {Navbar} from "./components/Navbar"
+import AddItem from './pages/AddItem';
 
 
 class App extends Component {
@@ -23,10 +24,11 @@ class App extends Component {
           <Navbar />
          
           <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/dash' component={Dash} />
+          <Route path='/about' component={About} />
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
+          <Route path='/dash' component={Dash} />
+          <Route path='/addItem' component={AddItem} />
         </div>
         
       </Router>

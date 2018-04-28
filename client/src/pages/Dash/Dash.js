@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import {Image, Button} from 'react-bootstrap';
+import './Dash.css';
 const items = [
   {
     "id": 1,
@@ -34,16 +37,27 @@ class Dash extends Component{
 
   render(){
     return (
-      <div>
-        <ul>
-          {items.map( (item) => (
-            <li>
-              <img src={item.image}/>
-              <div> {item.name} </div>
-              <div> {item.description} </div>
-            </li>
-          ))}
-        </ul>
+      <div className='container'>
+        <div className="row">
+            <div className=" col-md 12">
+              <div className='addButton'>       
+              <Link to = 'addItem' className="btn btn-primary" >Add New Item</Link>
+              </div>
+            </div>
+          </div>
+          <div className="row">  
+            <div className=" col-md 12" className='inline-block'>
+              <ul>
+                {items.map( (item) => (
+                  <li>
+                    <div><img className='itemImage' src={item.image}/></div>
+                    <div> {item.name} </div>
+                    <div> {item.description} </div>
+                  </li>
+                ))}
+              </ul>
+            </div>  
+          </div>        
       </div>
     )
   }

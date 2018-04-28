@@ -1,5 +1,6 @@
 import React from "react"
 import "./Navbar.css";
+import {Link} from "react-router-dom"
 
 export const Navbar = ()=> (
   <nav className="navbar navbar-default">
@@ -13,9 +14,9 @@ export const Navbar = ()=> (
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul className="nav navbar-nav">
         
-        <li><a href="/about">About</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign up</a></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">Signup</Link></li>
       </ul>
       <form className="navbar-form navbar-left">
         <div className="form-group">

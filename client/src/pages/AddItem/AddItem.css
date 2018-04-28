@@ -1,13 +1,9 @@
-.addButton{
-  display: flex; justify-content: center;
-}
-
-.itemImage{
+.image{
   height: 100px;
 }
 
   
-  .itemImage img {
+  .image  {
   max-height: 100%;  
   max-width: 100%; 
   position: absolute;  
