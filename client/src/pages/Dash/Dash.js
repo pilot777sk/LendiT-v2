@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import axios from "axios";
 import {Image, Button} from 'react-bootstrap';
 import './Dash.css';
 const items = [
@@ -34,11 +35,22 @@ const items = [
 ]
 
 class Dash extends Component{
-
+  state = {
+    listings: []
+  }
+  componentDidMount(){
+    axios.get('/api/allItems')
+      .then(response => {
+        console.log(response)
+      })
+    this.setState({
+      listings: items
+    })
+  }
   render(){
     return (
       <div className='container'>
-        <div className="row">
+          <div className="row">
             <div className=" col-md 12">
               <div className='addButton'>       
               <Link to = 'addItem' className="btn btn-primary" >Add New Item</Link>
@@ -48,11 +60,13 @@ class Dash extends Component{
           <div className="row">  
             <div className=" col-md 12" className='inline-block'>
               <ul>
-                {items.map( (item) => (
+                {this.state.listings.map( (item) => (
                   <li>
-                    <div><img className='itemImage' src={item.image}/></div>
-                    <div> {item.name} </div>
-                    <div> {item.description} </div>
+                    <Link to='/listing'>
+                      <div><img className='itemImage' src={item.image}/></div>
+                      <div> {item.name} </div>
+                      <div> {item.description} </div>
+                    </Link>
                   </li>
                 ))}
               </ul>

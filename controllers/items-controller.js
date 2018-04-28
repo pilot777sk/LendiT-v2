@@ -1,14 +1,11 @@
 const db = require ('../models')
 
-
-
-
-
 module.exports = {
   allItems: function(req, res){
-    db.Item.find({}).then(function (dbItem){
-      res.json(dbItem)
-    })
+    db.Item
+      .find(req.query)
+      .then(dbItem => res.json(dbItem))
+      .catch(err => res.status(422).json(err));
   },
   createItem: function(req, res){
     console.log(req.body)

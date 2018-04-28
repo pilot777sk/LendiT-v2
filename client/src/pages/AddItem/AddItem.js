@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import Field from '../../components/Field'
-import Preview from '../../components/Preview'
 import "./AddItem.css";
-
+import {Redirect} from 'react-router-dom'
 
 class AddItem extends Component{
   state = {
@@ -34,7 +33,13 @@ class AddItem extends Component{
 
   render(){
     if (this.state.submitted) {
-      return <Preview listingValues={this.state} />
+      const query = `?name=${this.state.name}&image=${this.state.image}&price=${this.state.price}&description=${this.state.description}`
+      return (
+        <Redirect to={{
+          pathname: '/preview',
+          search: query
+        }}/>
+      )
     }
     return (
       <div className="container">
