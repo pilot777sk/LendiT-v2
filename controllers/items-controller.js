@@ -18,5 +18,18 @@ module.exports = {
     // db.Item.create(item).then(function(dbItem){
     //   res.json(dbItem)
     // })
+  },
+  findById: function(req, res) {
+    db.Item
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  search: function(req, res) {
+    console.log(req.body)
+    db.Item
+      .find({name: req.body.name})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 }

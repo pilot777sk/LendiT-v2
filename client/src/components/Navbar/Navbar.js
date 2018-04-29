@@ -1,13 +1,14 @@
 import React from "react"
 import "./Navbar.css";
-import {Link} from "react-router-dom"
+import {Link, withRouter} from "react-router-dom"
+import SearchBar from '../SearchBar'
 
-export const Navbar = ()=> (
+const Navbar = (props) => (
   <nav className="navbar navbar-default">
   
   <div className="container-fluid">
     <div className="navbar-header">
-      <a className="navbar-brand" className="logo" href="/"><img src={'assets/Lendit_logo.png'}  alt='yes' height="50" /></a>
+      <a className="navbar-brand" className="logo" href="/"><img src={'/assets/Lendit_logo.png'}  alt='yes' height="50" /></a>
     </div>
     
     
@@ -17,17 +18,15 @@ export const Navbar = ()=> (
         <li><Link to="/about">About</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Signup</Link></li>
+        <li><Link to="/dash"> Dashboard</Link></li>
       </ul>
-      <form className="navbar-form navbar-left">
-        <div className="form-group">
-          <input type="text" className="form-control" placeholder="Search" />
-          <input type="text" className="form-control" placeholder="Location" />
-        </div>
-        <button type="submit" className="btn btn-default">Search</button>
-      </form>
+      
+      <SearchBar history={props.history}/>
       
     </div>
     
   </div>
 </nav> 
 )
+
+export default withRouter(Navbar);

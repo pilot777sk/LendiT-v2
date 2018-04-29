@@ -12,9 +12,10 @@ import ListingContainer from './pages/ListingContainer'
 
 
 
-import {Navbar} from "./components/Navbar"
+import Navbar from "./components/Navbar"
 import AddItem from './pages/AddItem';
 import Preview from './pages/Preview';
+import Success from './pages/Success';
 
 
 class App extends Component {
@@ -31,8 +32,10 @@ class App extends Component {
           <Route path='/signup' component={Signup} />
           <Route path='/dash' component={Dash} />
           <Route path='/addItem' component={AddItem} />
-          <Route path='/listing' component={ListingContainer} />
+          <Route path='/listing/:id' component={ListingContainer} />
           <Route path='/preview' component={Preview} />
+          <Route path='/success' component={Success} />
+          
         </div>
         
       </Router>
