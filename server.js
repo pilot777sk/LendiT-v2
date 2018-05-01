@@ -18,6 +18,7 @@ app.use(express.static("client/build"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lendit");
 app.listen(PORT, function() {
+  console.log("Starting");
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
