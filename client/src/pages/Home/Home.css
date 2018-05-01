@@ -1,4 +1,6 @@
-
+body{
+  background-image: url("/public/assets/lenditbackground.jpg");
+}
 
 .item {
   height: 200px;

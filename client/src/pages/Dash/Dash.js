@@ -30,6 +30,7 @@ class Dash extends Component{
   }
   componentDidMount(){
     if (this.props.location.search){
+      console.log(this.props.location.search);
       this.searchByName(this.props.location.search);
       
     } else{
@@ -55,22 +56,22 @@ class Dash extends Component{
               </div>
             </div>
           </div>
-          <div className="row" className='display'>  
-            <div className=" col-md-12" className='inline-block'>
-            <hr />
+          <hr />
+          <div className="jumbotron"> 
               <ul>
                 {this.state.listings.map( (item) => (
                   <li key={item._id}>
                     <Link to={`/listing/${item._id}`}>
+                      <div className="post">
                       <div><img className='itemImage' src={item.image}/></div>
                       <div> {item.name} </div>
                       <div> {item.description} </div>
+                      </div>
                     </Link>
                   </li>
                 ))}
               </ul>
               <hr />
-            </div>  
           </div>        
       </div>
     )

@@ -9,6 +9,10 @@ class AddItem extends Component{
     price: "",
     description: "",
     image: "",
+    owner: "",
+    location: "",
+    email: "",
+    phone: "",
     submitted: false
   };
 
@@ -62,6 +66,26 @@ class AddItem extends Component{
           <Field 
             label='image'
             value={this.state.image}
+            handleChange={this.handleInputChange}
+          />
+         <Field 
+            label='owner'
+            value={this.state.owner}
+            handleChange={this.handleInputChange}
+          />
+          <Field 
+            label='location'
+            value={this.state.location}
+            handleChange={this.handleInputChange}
+          />
+          <Field 
+            label='email'
+            value={this.state.email}
+            handleChange={this.handleInputChange}
+          />
+          <Field 
+            label='phone'
+            value={this.state.phone}
             handleChange={this.handleInputChange}
           />
           <button className="btn btn-primary" type='submit'>Submit</button>

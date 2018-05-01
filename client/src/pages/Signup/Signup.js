@@ -35,10 +35,14 @@ class Signup extends Component {
       <div className="container">
         <form className="form-signin" onSubmit={this.onSubmit}>
           <h2 className="form-signin-heading">Sign Up</h2>
+          <label for="inputUser" className="sr-only">User Name</label>
+          <input type="user" className="form-control" placeholder="User username" name="username" value={username} onChange={this.onChange} required/>
           <label for="inputEmail" className="sr-only">Email address</label>
           <input type="email" className="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
           <label for="inputPassword" className="sr-only">Password</label>
           <input type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
+          <label for="inputPhone" className="sr-only">Phone number</label>
+          <input type="phone" className="form-control" placeholder="Phone number" name="userphone" value={username} onChange={this.onChange} required/>
           <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         </form>
       </div>
