@@ -20,7 +20,7 @@ class About extends Component{
           </p>
           <p>Check it out:
             <br />
-          You and your wife decide to update the outside of the house with paint and new woodchips and trim the trees.  You are going to need the following items for the project.
+          You and your wife decide to update the outside of the house with paint, new woodchips and trim the trees.  You are going to need the following items for the project.
           </p>
           <ul>
             <li>Ladders</li>

@@ -49,14 +49,15 @@ class Dash extends Component{
     return (
       <div className='container'>
           <div className="row">
-            <div className=" col-md 12">
+            <div className=" col-md-12">
               <div className='addButton'>       
               <Link to = 'addItem' className="btn btn-primary" >Add New Item</Link>
               </div>
             </div>
           </div>
-          <div className="row">  
-            <div className=" col-md 12" className='inline-block'>
+          <div className="row" className='display'>  
+            <div className=" col-md-12" className='inline-block'>
+            <hr />
               <ul>
                 {this.state.listings.map( (item) => (
                   <li key={item._id}>
@@ -68,6 +69,7 @@ class Dash extends Component{
                   </li>
                 ))}
               </ul>
+              <hr />
             </div>  
           </div>        
       </div>

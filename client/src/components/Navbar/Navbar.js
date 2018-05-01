@@ -2,6 +2,7 @@ import React from "react"
 import "./Navbar.css";
 import {Link, withRouter} from "react-router-dom"
 import SearchBar from '../SearchBar'
+import { Button } from "react-bootstrap";
 
 const Navbar = (props) => (
   <nav className="navbar navbar-default">
@@ -22,7 +23,7 @@ const Navbar = (props) => (
       </ul>
       
       <SearchBar history={props.history}/>
-      
+      {props.auth && <Button>Logout</Button>}    
     </div>
     
   </div>
