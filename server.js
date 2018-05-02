@@ -12,9 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Add routes, both API and view
-app.use(routes);
 // Serve up static assets
 app.use(express.static("client/build"));
+
+app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lendit");
 app.listen(PORT, function() {
