@@ -15,10 +15,12 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 
 // Add routes, both API and view
-app.use(routes);
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lendit");
+
+app.use(routes);
 
 app.listen(PORT, function() {
   console.log("Starting");
