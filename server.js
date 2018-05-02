@@ -11,13 +11,15 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Add routes, both API and view
 // Serve up static assets
 app.use(express.static("client/build"));
 
+// Add routes, both API and view
 app.use(routes);
 
+mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lendit");
+
 app.listen(PORT, function() {
   console.log("Starting");
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
