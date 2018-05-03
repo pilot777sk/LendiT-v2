@@ -4,17 +4,20 @@ import "./AddItem.css";
 import {Redirect} from 'react-router-dom'
 
 class AddItem extends Component{
-  state = {
-    name: "",
-    price: "",
-    description: "",
-    image: "",
-    owner: "",
-    location: "",
-    email: "",
-    phone: "",
-    submitted: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      price: "",
+      description: "",
+      image: "",
+      owner: props.user.name || "",
+      location: props.user.location || "",
+      email: props.user.email || "",
+      phone: props.user.phone || "",
+      submitted: false
+    };
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -37,7 +40,7 @@ class AddItem extends Component{
 
   render(){
     if (this.state.submitted) {
-      const query = `?name=${this.state.name}&image=${this.state.image}&price=${this.state.price}&description=${this.state.description}`
+      const query = `?name=${this.state.name}&image=${this.state.image}&price=${this.state.price}&description=${this.state.description}&owner=${this.state.owner}&location=${this.state.location}&email=${this.state.email}&phone=${this.state.phone}`
       return (
         <Redirect to={{
           pathname: '/preview',

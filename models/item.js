@@ -10,7 +10,6 @@ const itemSchema = new Schema({
   location: String,
   email: String,
   phone: String
-  
 })
 
 const Item = mongoose.model('Item',itemSchema)

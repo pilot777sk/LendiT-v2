@@ -23,7 +23,15 @@ module.exports = {
             // if user is found and password is right create a token
             var token = jwt.sign(user.toJSON(), settings.secret);
             // return the information including token as JSON
-            res.json({success: true, user: user});
+            res.json({
+              success: true,
+              user: {
+                email: user.email,
+                location: user.location,
+                name: user.name,
+                phone: user.phone 
+              }
+            });
           } else {
             res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
           }
@@ -37,7 +45,11 @@ module.exports = {
     } else {
       const newUser = new User({
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        location: req.body.location
       });
       // save the user
       newUser.save(function(err) {

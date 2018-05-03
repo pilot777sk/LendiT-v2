@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Field = (props) => (
+const Field = ({ label, handleChange, type="text", value }) => (
   
   <div className="form-group">
-    <label >{props.label.toUpperCase()}</label>
+    <label >{label.toUpperCase()}</label>
     <input className="form-control"
-      onChange={props.handleChange}
-      type="text"
-      value={props.value}
-      name={props.label}
+      onChange={handleChange}
+      type={type}
+      value={value}
+      name={label}
     />
   </div>
 )

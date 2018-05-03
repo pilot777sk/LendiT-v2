@@ -9,6 +9,7 @@ import Signup from './pages/Signup'
 import Dash from './pages/Dash'
 import ListingContainer from './pages/ListingContainer'
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import AddItem from './pages/AddItem';
 import Preview from './pages/Preview';
 import Success from './pages/Success';
@@ -18,9 +19,10 @@ import axios from 'axios';
 class App extends Component {
   state = {
     authenticated: false,
+    user: {}
   }
-  signup = (username, password) => {
-    axios.post('/api/auth/signup', { username, password })
+  signup = (username, password, name, phone, email, location) => {
+    axios.post('/api/auth/signup', { username, password, name, phone, email, location })
       .then(response => {
         console.log(response.data);
         if(response.data.success || response.data.msg === "Username already exists.") {
@@ -38,10 +40,11 @@ class App extends Component {
   }
   login = (username, password) => {
     axios.post('/api/auth/login', { username, password })
-      .then((result) => {
-        this.props.history.push('/dash')
+      .then((response) => {
+        const { user } = response.data
         this.setState({
-          authenticated: true
+          authenticated: true,
+          user
         })
       })
       .catch((error) => {
@@ -50,6 +53,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       
       <Router>
@@ -61,11 +65,12 @@ class App extends Component {
           <Route path='/login' render={props => <Login login={this.login} {...props}/> } />
           <Route path='/signup' render={props => <Signup signup={this.signup} {...props}/> } />
           <Route path='/dash' component={Dash} />
-          <Route path='/addItem' component={AddItem} />
+          <Route path='/addItem' render={props => <AddItem user={this.state.user} {...props}/> } />
           <Route path='/listing/:id' component={ListingContainer} />
           <Route path='/preview' component={Preview} />
           <Route path='/success' component={Success} />
           
+          <Footer />
         </div>
         
       </Router>

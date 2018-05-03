@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './Signup.css';
+
+import Field from '../../components/Field'
 
 class Signup extends Component {
   state = {
     username: '',
     password: '',
+    name: '',
+    phone: '',
+    email: '',
+    location: '',
     signedUp: false
   };
   onChange = (e) => {
@@ -19,14 +23,17 @@ class Signup extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password } = this.state;
+    const { username, password, owner, phone, email, location } = this.state;
 
-    this.props.signup(username, password)
+    this.props.signup(username, password, owner, phone, email, location)
+    this.setState({
+      signedUp: true
+    })
   }
 
   render() {
-    const { username, password } = this.state;
-    if (this.state.signedUp) {
+    const { username, password, owner, phone, email, location, signedUp } = this.state;
+    if (signedUp) {
       return (
         <Redirect to='/dash'/>
       )
@@ -35,14 +42,38 @@ class Signup extends Component {
       <div className="container">
         <form className="form-signin" onSubmit={this.onSubmit}>
           <h2 className="form-signin-heading">Sign Up</h2>
-          <label for="inputUser" className="sr-only">User Name</label>
-          <input type="user" className="form-control" placeholder="User username" name="username" value={username} onChange={this.onChange} required/>
-          <label for="inputEmail" className="sr-only">Email address</label>
-          <input type="email" className="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
-          <label for="inputPassword" className="sr-only">Password</label>
-          <input type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-          <label for="inputPhone" className="sr-only">Phone number</label>
-          <input type="phone" className="form-control" placeholder="Phone number" name="userphone" value={username} onChange={this.onChange} required/>
+          <Field
+            label='username'
+            value={this.state.username}
+            handleChange={this.onChange}
+          />
+          <Field
+            label='password'
+            value={this.state.password}
+            handleChange={this.onChange}
+            type="password"
+          />
+          <Field
+            label='name'
+            value={this.state.name}
+            handleChange={this.onChange}
+          />
+          <Field
+            label='phone'
+            value={this.state.phone}
+            handleChange={this.onChange}
+          />
+          <Field
+            label='email'
+            value={this.state.email}
+            handleChange={this.onChange}
+            type="email"
+          />
+          <Field
+            label='location'
+            value={this.state.location}
+            handleChange={this.onChange}
+          />
           <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         </form>
       </div>

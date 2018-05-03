@@ -22,9 +22,12 @@ class Preview extends Component{
       })
   }
   componentDidMount(){
+    console.log(this.props.location.search)
+    console.log(parse(this.props.location.search))
     this.setState(parse(this.props.location.search));
   }
   render(){
+    console.log(this.state);
     const { match } = this.props;
     if(this.state.successful){
       return <Redirect to='/success' />

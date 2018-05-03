@@ -8,11 +8,13 @@ import {parse} from 'query-string';
 
 class Dash extends Component{
   state = {
+    query: '',
     listings: []
   }
   searchByName = (searchQuery) => {
     axios.post('/api/items/search', searchQuery)
         .then(response => {
+          console.log(response);
           this.setState({
             listings: response.data
           })
@@ -28,25 +30,27 @@ class Dash extends Component{
         })
     
   }
+  componentWillMount() {
+    this.unlisten = this.props.history.listen((location, action) => {
+      if (location.search){
+        this.searchByName(parse(location.search));  
+      } else {
+        this.getAllListings();
+      }
+    });
+  }
+  componentWillUnmount() {
+    this.unlisten();
+  }
   componentDidMount(){
     if (this.props.location.search){
-      console.log(this.props.location.search);
-      this.searchByName(this.props.location.search);
+      this.searchByName(parse(this.props.location.search));
       
-    } else{
-      this.getAllListings();
-    }
-  }
-  componentWillReceiveProps(){
-    if (this.props.location.search){
-      this.searchByName(this.props.location.search);
-      
-    } else{
+    } else {
       this.getAllListings();
     }
   }
   render(){
-    console.log(this.props)
     return (
       <div className='container'>
           <div className="row">
