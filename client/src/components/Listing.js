@@ -2,7 +2,6 @@ import React from 'react';
 import {Image, Modal, Button} from 'react-bootstrap';
 import {Link, Route} from "react-router-dom";
 
-//https://images.craigslist.org/00F0F_gOxJjTk8eUE_600x450.jpg
 
 const Listing = ({name='name', image='http://via.placeholder.com/350x150', price='price', description='description', owner='owner', location='location', email='email', phone='phone'}) => (
   <div>

@@ -23,7 +23,8 @@ const Navbar = (props) => (
       </ul>
       
       <SearchBar history={props.history}/>
-      {props.auth && <Button className="btn navbar-btn navbar-right">Logout</Button>}    
+      {props.auth && <Button className="btn navbar-btn navbar-right">Logout</Button>}
+          
     </div>
     
   </div>

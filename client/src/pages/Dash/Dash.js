@@ -62,7 +62,7 @@ class Dash extends Component{
           </div>
           <hr />
           <div className="jumbotron"> 
-              <ul>
+              <ul className="no-bullet">
                 {this.state.listings.map( (item) => (
                   <li key={item._id}>
                     <Link to={`/listing/${item._id}`}>
