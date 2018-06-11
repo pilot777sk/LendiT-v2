@@ -59,22 +59,23 @@ class Dash extends Component{
             </div>
           </div>
           <hr />
-          <div className="jumbotron"> 
-              <ul className="no-bullet">
-                {this.state.listings.map( (item) => (
-                  <li key={item._id}>
-                    <Link to={`/listing/${item._id}`}>
-                      <div className="post">
-                      <div><img className='itemImage' src={item.image}/></div>
+          <ul className="list-group">
+            {this.state.listings.map( (item) => (
+              <li className="list-group-item" key={item._id}>
+                <Link to={`/listing/${item._id}`}>
+                  <div className="media">
+                    <div className="media-left">
+                      <img className='itemImage media-object' src={item.image}/>
+                    </div>
+                    <div className="media-body">
                       <div> {item.name} </div>
                       <div> {item.description} </div>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <hr />
-          </div>        
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>   
       </div>
     )
   }
