@@ -36,6 +36,9 @@ class App extends Component {
               console.log(error);
             }) 
         }
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
   login = (username, password) => {
@@ -51,14 +54,21 @@ class App extends Component {
         console.log(error);
       });
   }
+  logout = () => {
+    this.setState({
+     authenticated: false,
+     user: {}
+    })
+  }
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
       
       <Router>
-        <div> 
-          <Navbar auth={this.state.authenticated}/>
+        <div class="appBody"> 
+          <Navbar auth={this.state.authenticated} logout={this.logout}/>
+          
          
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />

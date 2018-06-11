@@ -1,10 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+
 .navbar-default {
   background-color: #1a77b4;
-  border-color: #e7e7e7;  
+  border-color: #e7e7e7; 
+  margin: 0px; 
   
 }
 .text{

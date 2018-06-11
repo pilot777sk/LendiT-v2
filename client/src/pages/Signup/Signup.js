@@ -23,16 +23,16 @@ class Signup extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password, owner, phone, email, location } = this.state;
+    const { username, password, name, phone, email, location } = this.state;
 
-    this.props.signup(username, password, owner, phone, email, location)
+    this.props.signup(username, password, name, phone, email, location)
     this.setState({
       signedUp: true
     })
   }
 
   render() {
-    const { username, password, owner, phone, email, location, signedUp } = this.state;
+    const { username, password, name, phone, email, location, signedUp } = this.state;
     if (signedUp) {
       return (
         <Redirect to='/dash'/>

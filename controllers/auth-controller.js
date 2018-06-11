@@ -51,6 +51,7 @@ module.exports = {
         email: req.body.email,
         location: req.body.location
       });
+      console.log(newUser);
       // save the user
       newUser.save(function(err) {
         if (err) {

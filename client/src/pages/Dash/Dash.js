@@ -30,15 +30,6 @@ class Dash extends Component{
         })
     
   }
-  componentWillMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
-      if (location.search){
-        this.searchByName(parse(location.search));  
-      } else {
-        this.getAllListings();
-      }
-    });
-  }
   componentWillUnmount() {
     this.unlisten();
   }
@@ -49,6 +40,13 @@ class Dash extends Component{
     } else {
       this.getAllListings();
     }
+    this.unlisten = this.props.history.listen((location, action) => {
+      if (location.search){
+        this.searchByName(parse(location.search));  
+      } else {
+        this.getAllListings();
+      }
+    });
   }
   render(){
     return (
