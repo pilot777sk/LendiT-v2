@@ -14,7 +14,7 @@ class About extends Component{
           <p>Whether you’re a Do it yourselfer or a Weekend warrior find what your looking for on Lendit.
           </p>
           <h2> How it works </h2>
-          <p>LendiT is a community coop that allow two parties to help each other,  one supplies the needs to the others for a small fee.
+          <p>LendiT is a community co-op that allow two parties to help each other,  one supplies the item to the others for a small fee.
             <br />
           By signing up it allows you to post Items you would be willing to lend out.  If you need something just do a Search of the site and find what you need.
           </p>
@@ -34,7 +34,7 @@ class About extends Component{
           </p>
           <h2> Make money by lending </h2>
  
-          <p>Let say you have 12 foot step ladder in your garage that has not been used for 5 years but you want to hang on to it. By posting it on LendiT another member who needs one for the weekend could make you   $20 and save the other member $300 and space in his garage.
+          <p>Let say you have 12 foot step ladder in your garage that has not been used for 5 years but you want to hang on to it. By posting it on LendiT another member for the weekend could make you  $20 and save the other member $300 and space in his garage.
           </p>
         </div>  
       </div>

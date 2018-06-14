@@ -66,7 +66,7 @@ class App extends Component {
     return (
       
       <Router>
-        <div class="appBody"> 
+        <div className="appBody"> 
           <Navbar auth={this.state.authenticated} logout={this.logout}/>
           
          

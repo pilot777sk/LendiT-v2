@@ -4,7 +4,7 @@ import {Link, Route} from "react-router-dom";
 
 
 const Listing = ({name='name', image='http://via.placeholder.com/350x150', price='price', description='description', owner='owner', location='location', email='email', phone='phone'}) => (
-  <div>
+  <div className="container">
     <h2>Name: {name}</h2>
     <Image
       src={image} style={{height: 100, width: null}}
